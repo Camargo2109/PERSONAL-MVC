@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Victor Personal</title>
+    @await RenderSectionAsync("Styles", required: false)
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="shortcut icon" href="~/img/icons/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logoz">
+            <img src="~/img/icons/logo.png" class="LogoVitor">
+            <a asp-action="Index" class="logo"><span>PERSONAL</span>VICTOR</a>
+        </div>
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+        <nav class="navbar">
+            <a href="#home">Início</a>
+            <a href="#about">Sobre</a>
+            <a href="#features">Testes</a>
+            <a href="#contact">Contatos</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+    </footer>
+
+    <button id="back-to-top-btn"><i class="fas fa-angle-double-up"></i></button>
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/backtop.js" asp-append-version="true"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

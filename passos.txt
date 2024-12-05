@@ -1,0 +1,11 @@
+Configuarar o GitHub:
+
+git config --global user.name TCCJOAORAYS
+git config --global user.email tccjaoraysa@gmail.com
+
+  cd Personal
+  dotnet restore
+  dotnet ef migrations add InitialCreate
+  dotnet ef migrations add {nomedoBanco} (se necessário).
+  dotnet ef database update
+  dotnet watch run

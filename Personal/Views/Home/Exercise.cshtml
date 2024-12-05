@@ -1,0 +1,42 @@
+@model Personal.Models.Exercise
+@{
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+  <link rel="stylesheet" href="~/css/CssExercise/mainexercise.css">
+  <link rel="stylesheet" href="~/css/site.css">
+  <link rel="stylesheet" href="~/css/CssExercise/responsiveexercise">
+  <link rel='stylesheet' href='~/css/CssHome/mainhome.css'>
+  <link rel="stylesheet" href="~/css/site.css">
+  <link rel="stylesheet" href="~/css/CssHome/responsivehome.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+}
+
+
+<section class="apresentation-test">
+  <div class="textos">
+    <h1 class="frase">@Model.Descricao</h1>
+    <h2 class="title">@Model.Nome</h2>
+  </div>
+  <img src="@Model.Imagem" class="hidden Freeman-Romberg">
+</section>
+
+
+<section class="titulo-tabela-1">
+  <h1 class="title">@Model.Titulo</h1>
+</section>
+
+
+<section class="hidden informations">
+  <p class="p2">
+ @foreach (var item in Model.Info)
+{
+    <p>→ @item</p>
+}
+
+  </p> 
+  <img src="@Model.Tabela" class="tabela-freeman">
+</section>
+
+<section class="results"></section>

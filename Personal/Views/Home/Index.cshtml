@@ -1,0 +1,221 @@
+﻿@model IEnumerable<Personal.Models.Exercise>
+
+@section Styles {
+    <link rel='stylesheet' href='~/css/CssHome/mainhome.css'>
+    <link rel="stylesheet" href="~/css/site.css">
+    <link rel="stylesheet" href="~/css/CssHome/responsivehome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+}
+
+<section id="home" class="hidden home">
+    <div class="swiper home-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide" style="background: url(../img/inicio/repeat1.png) no-repeat;">
+                <div class="content">
+                    <span>Se cuide, Treine em casa!</span>
+                    <h3>Seja saudável mesmo em casa!</h3>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide" style="background: url(../img/inicio/repeat2.png) no-repeat;">
+                <div class="content">
+                    <span>Se cuide, Treine em casa!</span>
+                    <h3>Torne-se mais forte do que suas desculpas.</h3>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide" style="background: url(../img/inicio/repeat3.png) no-repeat;">
+                <div class="content">
+                    <span>Se cuide, Treine em casa!</span>
+                    <h3>Insista, Persista e Supere.</h3>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+</section>
+
+<section id="about" class="about">
+    <div class="image">
+        <img src="../img/sobrevitor.png" alt="Sobre Vitor">
+        <a href="https://www.instagram.com/vitortutta" target="_blank" class="instagram-icon">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+
+    <div class="hidden content">
+        <span>Sobre Victor</span>
+        <h3 class="title">Um novo dia, uma nova oportunidade de melhorar!</h3>
+        <p>Olá! Eu sou o Victor Werner Oioli e vou te ajudar nesse processo de mudança de vida! Sou Personal
+            Trainer na academia TryHard na cidade de Barra Bonita, estudante do quarto módulo de Educação Física
+            na universidade GranTietê.</p>
+
+        <div class="box-container">
+            <div class="box">
+                <h3><i class="fas fa-check"></i>Físico Mental</h3>
+                <p>Treine seu corpo e sua mente será treinada.</p>
+            </div>
+
+            <div class="box">
+                <h3><i class="fas fa-check"></i>Vida Saudável</h3>
+                <p>Insista, Persista e Conquiste uma vida saudável.</p>
+            </div>
+            <div class="box">
+                <h3><i class="fas fa-check"></i>Estratégias</h3>
+                <p>Estratégias de melhor treinamento para o seu perfil.</p>
+            </div>
+            <div class="box">
+                <h3><i class="fas fa-check"></i>Treino em casa</h3>
+                <p>Treinos especializados e seguro em casa.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!---->
+
+<section id="features" class="features">
+    <h1 class="heading"><span>Testes Rápidos</span></h1>
+    <div class="hidden box-container custom-carousel">
+        <div class="carousel-inner">
+            @if (Model != null && Model.Any())
+            {
+                var items = Model.ToList();
+                foreach (var item in items)
+                {
+                    <div class="box carousel-item">
+                        <div class="box boxcars">
+                            <div class="image">
+                                <img src="@Html.DisplayFor(modelItem => item.ImagemAux)" alt="Imagem do Exercício">
+                            </div>
+                            <div class="content">
+                                <img src="@Html.DisplayFor(modelItem => item.Icon)" alt="Ícone do Exercício">
+                                <h3>@Html.DisplayFor(modelItem => item.NomeAux)</h3>
+                                <p>@Html.DisplayFor(modelItem => item.Tipo)</p>
+                                <a asp-action="Exercise" asp-route-id='@item.Id' class="btn">Saiba mais</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div style="color: white;">
+                    <p>nenhum exercício disponível</p>
+                </div>
+            }
+        </div>
+    </div>
+    <!-- Botões de navegação -->
+    <div class="hidden controls">
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+    </div>
+</section>
+
+
+<!--------->
+
+
+<section class="banner">
+    <span>Transforme seu corpo, transforme sua vida</span>
+    <h3>Victor Werner Oioli</h3>
+    <p>Conheça Victor, especializado em educação física, oferece o melhor para sua saúde
+    </p>
+</section>
+
+<section class="review">
+    <div class="information">
+        <span>Feedbacks</span>
+        <h3>Experiências de quem passou por aqui</h3>
+        <p>Quer saber o que dizem?</p>
+    </div>
+    <div class="hidden swiper review-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide">
+                <p>Comecei a seguir os exercícios de alongamento do site e, em poucas semanas, senti uma enorme
+                    diferença na minha flexibilidade. As dores nas costas que me incomodavam há anos
+                    praticamente desapareceram. Recomendo a todos!</p>
+                <div class="user">
+                    <img src="https://i.postimg.cc/4xhDF81N/pic-1.png" alt="">
+                    <div class="info">
+                        <h3>João Luiz</h3>
+                    </div>
+                    <i class="fas fa-quote-left"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <p>Os treinos para ganho de massa muscular são incríveis. Com as orientações detalhadas e vídeos
+                    explicativos, consegui ganhar massa de forma eficiente e segura. O personal trainer
+                    realmente sabe o que faz!</p>
+                <div class="user">
+                    <img src="https://i.postimg.cc/ry7XCXSY/pic-2.png" alt="">
+                    <div class="info">
+                        <h3>Luana</h3>
+                    </div>
+                    <i class="fas fa-quote-left"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <p>Após começar a fazer os exercícios recomendados para dores localizadas, minhas dores no ombro
+                    diminuíram significativamente. As dicas e os vídeos são muito claros e fáceis de seguir.</p>
+                <div class="user">
+                    <img src="https://i.postimg.cc/7ZxBSmQW/pic-3.png" alt="">
+                    <div class="info">
+                        <h3>Eduardo</h3>
+                    </div>
+                    <i class="fas fa-quote-left"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <p>Os exercícios de alongamento do site são incríveis! Tenho uma rotina muito corrida e passo
+                    muitas horas sentado. Desde que comecei a seguir os vídeos de alongamento, sinto-me mais
+                    flexível e com menos dores musculares. Recomendo totalmente!</p>
+                <div class="user">
+                    <img src="https://i.postimg.cc/8zjv8vFC/pic-4.png" alt="">
+                    <div class="info">
+                        <h3>Alice</h3>
+                    </div>
+                    <i class="fas fa-quote-left"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- Outras seções do site -->
+<div class="line">
+    <hr>
+</div>
+<!-- Seção de Contato -->
+<section class="contact" id="contact">
+    <div class="hidden container-grid">
+        <div class="text">
+            <h2 class="hidden title">Entre em contato com Victor!</h2>
+            <p>Tire suas suas dúvidas, faça críticas e de sugestões.
+            </p>
+            <a href="https://api.whatsapp.com/send?phone=+551699781951&text=Vamos agendar um horário!" target="_blank"
+                class="button">
+                <i class="fab fa-whatsapp"></i> Entrar em contato
+            </a>
+        </div>
+        <div class="links">
+            <ul class="grid">
+                <li><i class="fas fa-phone"></i> +55 (16) 99758-1951</li>
+                <li><i class="fas fa-envelope"></i> virto_tutta@hotmail.com</li>
+                <li><i class="fas fa-map-marker-alt"></i> Barra Bonita, Brasil</li>
+                <li><i class="fab fa-instagram"></i>  &#64; vitortutta</li>
+            </ul>
+        </div>
+    </div>
+</section>
